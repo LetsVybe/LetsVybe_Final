@@ -1,7 +1,7 @@
 let vybeChallenge1;
 
 // Element to render all functionality of the question
-function PostCard() {
+function PostCard(profile=false) {
     this.showDescriptionContainer = true;
 
     // Create the references for dom elements here.
@@ -9,6 +9,8 @@ function PostCard() {
     this.description = null;	// Section to display the description.
     this.questions = null; 		// Section to display the questions.
     this.actionBar = null; 		// Section to allow users to select the actions e.g. play, like, etc.
+
+    this.profile = profile;
 
     this.element = null;
 }
@@ -62,7 +64,8 @@ function QuestionContainer(question, questionID, answer) {
 }
 
 // Elements to show on the action bar.
-function ActionBarContainer(liked, played) {
+function ActionBarContainer(liked, played, profile) {
+    this.profile = profile;
     this.liked = liked;			// If the post is liked.
     this.played = played;		// If the post is already played.
 
@@ -75,6 +78,7 @@ function ActionBarContainer(liked, played) {
     this.notLikedImageURL = '../images/like.png';
     this.playedImageURL = '../images/played.png';
     this.notPlayedImageURL = '../images/play.png';
+    this.deleteImageURL = '../images/delete.png';
 
 
     // Intialize the dom Elements.
@@ -364,7 +368,11 @@ ActionBarContainer.prototype.initializeElement = function () {
     var optionSpan = document.createElement('span')
     optionSpan.setAttribute('class', 'news__activity--icon')
     optionImage = document.createElement('img')
-    optionImage.setAttribute('src', '../images/option.png')
+    if (this.profile) {
+        optionImage.setAttribute('src', this.deleteImageURL)
+    } else {
+        optionImage.setAttribute('src', '../images/option.png')
+    }
     optionImage.setAttribute('class', 'user-nav__icon');
     optionSpan.appendChild(optionImage);
     this.optionButton.appendChild(optionSpan);
@@ -395,6 +403,19 @@ ActionBarContainer.prototype.onPlay = function (that) {
     // TODO: change the description and show questions.
     this.playButton.onclick = function () {
         that.onPlay();
+    }
+}
+
+ActionBarContainer.prototype.onDelete = function(challengeRef, deletePost){
+    this.optionButton.onclick = () => {
+        deletePost(challengeRef)
+            .then(result => {
+                if (result) {
+                    console.log('Successfully deleted challenge.');
+                    let currPost = document.querySelector('#' + challengeRef.challengeID);
+                    currPost.parentElement.removeChild(currPost);
+                }
+            });
     }
 }
 
@@ -432,11 +453,14 @@ PostCard.prototype.initialize = function (vybeChallenge) {
     this.description = new DescriptionContainer(vybeChallenge.description);
     // TODO: If the user has already answered the question then render the result instead of question.
     this.questions = new QuestionsContainer(vybeChallenge.challengeID, vybeChallenge.questions, vybeChallenge.answers);
-    this.actionBar = new ActionBarContainer(vybeChallenge.liked, vybeChallenge.answers !== null);
+    this.actionBar = new ActionBarContainer(vybeChallenge.liked, vybeChallenge.answers !== null, this.profile);
 
     // Actions for action Bar
     this.actionBar.onLike(vybeChallenge, vybeChallenge.likePost);
     this.actionBar.onPlay(this);
+    if (this.profile) {
+        this.actionBar.onDelete(vybeChallenge, vybeChallenge.deletePost);
+    }
 
     // Action for clicking the submit button.
     if (vybeChallenge.answers === null) {
@@ -453,6 +477,7 @@ PostCard.prototype.initialize = function (vybeChallenge) {
     // Style all of them together maybe under the main li.
     this.element = document.createElement('div');
     this.element.setAttribute('class', 'news');
+    this.element.setAttribute('id', vybeChallenge.challengeID)
 
     this.element.appendChild(this.userHeader.getElement());
     this.element.appendChild(this.questions.getElement());
