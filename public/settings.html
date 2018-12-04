@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      <title>Settings</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+      <!--         Google Foonts Open Sans -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="styles/style.css">
+      <link rel="stylesheet" href="styles/setting.css">
+
+      <!-- Firebase scripts needed to run api calls-->
+      <script defer src="/__/firebase/5.5.8/firebase-app.js"></script>
+      <!-- include only the Firebase features as you need -->
+      <script defer src="/__/firebase/5.5.8/firebase-auth.js"></script>
+      <script defer src="/__/firebase/5.5.8/firebase-firestore.js"></script>
+      <script defer src="/__/firebase/5.5.8/firebase-storage.js"></script>
+
+      <!-- initialize the SDK after all desired features are loaded -->
+      <script defer src="/__/firebase/init.js"></script>
+</head>
+
+<body>
+
+      <header class="header">
+            <a href="home.html">
+                  <img src="images/pulse.svg" class="logo">
+            </a>
+            <!-- Search navigation that may need to be implemented later -->
+            <!-- <form action="#" class="search">
+                  <input type="text" class="search__input">
+                  <button class="search__button">
+                        <svg class="search__icon">
+                              <use xlink:href="images/sprite.svg#icon-magnifying-glass"></use>
+                        </svg>
+                  </button>
+            </form> -->
+
+            <nav class="user-nav">
+                  <!-- awaiting implementations of nav  -->
+                  <div class="user-nav_profile-box">
+                        <div class="user-nav__icon-box">
+                              <img src="images/userjorde.png" class="user-nav__user-photo" id="navPhoto">
+                              <span class="user-nav__user-name" id="nav-name"></span>
+                        </div>
+                  </div>
+            </nav>
+      </header>
+      <div class="container">
+            <!-- Mobile View -->
+            <div class="profile-photoSection">
+                  <div class="settingsHeader">
+                        Settings
+                  </div>
+                  <img id="photoField" src='#'>
+            </div>
+
+            <div class="mobileSettingsContainer">
+                  <h3>Basic Information</h3>
+                  <div class="name">
+                        <span class="basic-infoLeft">Name</span>
+                        <span class="basic-infoRight" id="name">Some name</span>
+                  </div>
+                  <div class="gender">
+                        <span class="basic-infoLeft">Gender</span>
+                        <span class="basic-infoRight" id="gender">Some Gender</span>
+                  </div>
+                  <div class="location">
+                        <span class="basic-infoLeft">Location</span>
+                        <span class="basic-infoRight" id="location">Some Location</span>
+                  </div>
+                  <div class="email">
+                        <span class="basic-infoLeft">Email</span>
+                        <span class="basic-infoRight" id="email">Some Email</span>
+                  </div>
+                  <!-- <div class="sideSettings"> -->
+                  <!-- <div class="setting">General </div>
+                              <div class="settings-section" hidden>
+                                        
+                                         <div class="box">
+                                               <div class="left">
+                                       
+                                               </div>
+                                               <div class="right">
+                                                      <p>Update Picture:</p>
+                                                      <input id="photoInput" type="file" accept="image/*">
+                                               </div>
+                                         </div>
+                                         <div class="box">
+                                                <div class="left">
+                                                  <div class="userName" onclick="updateUser()">
+                                                      <h3>Change the username</h3>
+                                                      <p>Current username:<p id="usernameField"></p></p>
+                                                 </div>
+                                                
+                                                </div>
+                                                <div class="right">
+                                                <div class="updateUserName" hidden>
+                                                    <p>New username:</p>
+                                                    <input id="usernameInput" type="input">
+                                                    <button id="updateUsername-btn">Update Username</button>
+                                                </div>
+                                                </div>
+                                          </div>
+                                          
+                                            
+                              </div>
+                       
+                        <div class="setting">Password</div>
+                        <div class="setting">Location</div>
+                        <div class="setting">Privacy</div> -->
+            </div>
+
+            <!-- Desktop View -->
+            <div class="settingsContainer">
+                  <div class="sideSettings">
+                        <div class="setting">General </div>
+                        <div class="setting">Password</div>
+                        <div class="setting">Location</div>
+                        <div class="setting">Privacy</div>
+
+                  </div>
+                  <div class="settingsOptions">
+                        <main>
+                              <!-- User's General information -->
+                              <h3>Basic Information</h3>
+                              <div class="general">
+
+                                    <div class="box">
+                                          <div class="left">
+                                                <div class="displayPhoto">
+                                                      <!-- <h3>Display picture</h3> -->
+                                                      <p>
+                                                            <img id="photoField" src='#'>
+                                                      </p>
+                                                </div>
+
+                                          </div>
+
+                                          <div class="right">
+                                                <span class="edit">
+                                                      <a>Edit</a>
+                                                </span>
+                                          </div>
+
+                                    </div>
+
+                                    <div class="box">
+                                          <div class="left">
+                                                <div class="userName option" onclick="updateUser()">
+                                                      <p>Current username:
+                                                            <p id="usernameField"></p>
+                                                      </p>
+                                                </div>
+
+                                          </div>
+
+                                          <div class="right">
+                                                <span class="edit">
+                                                      <a>Edit</a>
+                                                </span>
+                                          </div>
+
+                                    </div>
+                                    <div class="updateUserName option-updateDropDown" hidden>
+                                          <p>New username:</p>
+                                          <input id="usernameInput" type="input">
+                                          <button id="updateUsername-btn">Update Username</button>
+                                    </div>
+
+                                    <div class="box">
+                                          <div class="left">
+                                                <div class="displayName option" onclick="updateDisplayName()">
+
+                                                      <p>Current display name:
+                                                            <span id="displayNameField"></span>
+                                                      </p>
+                                                </div>
+
+                                          </div>
+
+                                          <div class="right">
+                                                <span class="edit">
+                                                      <a>Edit</a>
+                                                </span>
+                                          </div>
+
+                                    </div>
+
+                                    <div class="updateDisplayName option-updateDropDown" hidden>
+                                          <p>New display name:</p>
+                                          <input id="displayNameInput" type="input">
+                                          <button id="updateDisplayName-btn">Update Display Name</button>
+                                    </div>
+
+                                    <div class="box">
+                                          <div class="left">
+                                                <div class="age option" onclick="updateAge()">
+                                                      <p>Current age:
+                                                            <span id="ageField"></span>
+                                                      </p>
+                                                </div>
+
+                                          </div>
+
+                                          <div class="right">
+                                                <span class="edit">
+                                                      <a>Edit</a>
+                                                </span>
+                                          </div>
+
+                                    </div>
+
+
+                                    <div class="updateAge  option-updateDropDown" hidden>
+                                          <p>New age:</p>
+                                          <input id="ageInput" type="input">
+                                          <button id="updateAge-btn">Update Age</button>
+                                    </div>
+
+                                    <div class="box">
+                                                <div class="left">
+                                                            <div class="phoneNumber option" onclick="updatePhoneNumber()">
+                                                                        <p>Current phone number:
+                                                                              <span id="phoneField"></span>
+                                                                        </p>
+                                                                  </div>
+      
+                                                </div>
+      
+                                                <div class="right">
+                                                      <span class="edit">
+                                                            <a>Edit</a>
+                                                      </span>
+                                                </div>
+      
+                                          </div>
+
+                                          <div class="updatePhoneNumber option-updateDropDown" hidden>
+                                                      <p>New phone number:</p>
+                                                      <input id="phoneInput" type="input">
+                                                      <button id="updatePhone-btn">Update Phone</button>
+                                                </div>
+
+                                                <div class="box">
+                                                            <div class="left">
+                                                                        <div class="email option" onclick="updateEmail()">
+                                                                              
+                                                                                    <p>Current email:
+                                                                                          <span id="emailField"></span>
+                                                                                    </p>
+                                                                              </div>
+                  
+                                                            </div>
+                  
+                                                            <div class="right">
+                                                                  <span class="edit">
+                                                                        <a>Edit</a>
+                                                                  </span>
+                                                            </div>
+                  
+                                                      </div>
+
+                                                      <div class="updateEmail option-updateDropDown" hidden>
+                                                                  <p>New email:</p>
+                                                                  <input id="emailInput" type="input">
+                                                                  <button id="updateEmail-btn">Update Email</button>
+                                                            </div>
+
+
+                              </div>
+                        </main>
+
+                  </div>
+
+            </div>
+
+
+            <!-- Javascript file incorporating all the functionalities.-->
+            <script src="scripts/userPrototype.js"></script>
+            <script src="scripts/SettingsDomElements.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="scripts/settings.js"></script>
+</body>
+
+</html>

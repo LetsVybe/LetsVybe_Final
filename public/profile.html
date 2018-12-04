@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    <!--         Google Foonts Open Sans -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/profile.css">
+
+    <title>Vybe</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="index.html">
+            <img src="images/pulse.svg" class="logo">
+        </a>
+        <!-- Search navigation that may need to be implemented later -->
+        <form action="#" class="search">
+            <input type="text" class="search__input">
+
+        </form>
+
+        <nav class="user-nav">
+            <!-- awaiting implementations of nav  -->
+            <div class="user-nav_profile-box">
+                <div class="user-nav__icon-box">
+                    <a href="settings.html">
+                        <img src="#" class="user-nav__user-photo" id="navPhoto">
+                    </a>
+                    <span class="user-nav__user-name" id="nav-name"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- change later -->
+    <div class="container1">
+        <main class="grid-container">
+            <div class="grid-item">
+
+                <div class="profileBorder">
+                    <div class="profileFeed">
+                        <div class="circularProfileImage">
+                            <img src="" alt="" id="profilePhoto">
+                        </div>
+
+                        <div class="firstName">
+                            <p>
+                              <span id="userName">Bijesh Ong</span>  
+                                
+                            </p>
+                        </div>
+                        <line />
+                        <div class="editProfile">
+                            <center>
+                                <a href="#"> Edit Profile</a>
+                            </center>
+                        </div>
+                        <line />
+
+
+                        <div class="viewProfile">
+                            <center>
+                                <a href="#"> View Profile</a>
+                            </center>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+            <div class="grid-item-b">
+                <div class="post">
+                    <div class="postarea">
+                        <a class="postarea__img">
+                            <img src="#" class="postarea__img--pic" id="postarea-photo">
+                        </a>
+
+                    </div>
+
+                    <button type="button" class="postChallengeBtn" data-toggle="modal" data-target="#myModal" id="postChallengeBtn">Post Challenge</button>
+                    <!-- <button name="submitPost" class="postChallengeBtn">Post Challenge</button> -->
+
+                </div>
+
+                <div class="feed">
+                    <ul id="feed-list">
+                        <li>
+                            <!-- for testing, code below this line to be deleted -->
+                            <div class="news">
+                                <div class="news__header">
+                                    <img src="#" class="user-nav__user-photo news__header--img">
+                                    <label class="name-title  news__header--title">First Last Name</label>
+                                </div>
+                                <div class="news__userContent" id="userContent">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, suscipit id expedita
+                                        voluptatem, beatae ipsa quaerat officiis velit vel est quasi necessitatibus obcaecati
+                                        quo minima dolorem aperiam nulla veritatis placeat.
+                                    </p>
+                                </div>
+
+                                <div class="news__activity" id="nose">
+                                    <!-- Vybe-btn is similar to like-->
+                                    <button class="news__activity__btn vybe-btn">
+                                        <span class="news__activity--icon">
+                                            <!-- <svg class="user-nav__icon">
+                                                                                                <use href="images/vybe.png"></use>
+                                                                                        </svg> -->
+                                            <img class="user-nav__icon" src="images/vybe.png">
+                                        </span>
+                                    </button>
+                                    <button class="news__activity__btn play-btn">
+                                        <span class="news__activity--icon">
+                                            <!-- <svg class="user-nav__icon">
+                                                                                                <use href="images/play.png"></use>
+                                                                                        </svg> -->
+                                            <img class="user-nav__icon" src="images/play.png">
+                                        </span>
+                                    </button>
+                                    <!-- Delete btn for Now, must create pop up with options by next week -->
+                                    <button class="news__activity__btn" id="options-btn">
+                                        <span class="news__activity--icon">
+                                            <!-- <svg class="user-nav__icon">
+                                                                                                <use href="images/option.png"></use>
+                                                                                        </svg> -->
+                                            <img class="user-nav__icon" src="images/option.png">
+                                        </span>
+                                    </button>
+
+
+                                </div>
+                            </div>
+                        </li>
+                        <!-- for testing, code above this line to be deleted -->
+
+                </div>
+            </div>
+
+            <div class="grid-item-c">
+                <div class="streaksContainer">
+                    <h2 class= "friendsTitle">Follwers: </h2>
+
+                    <div class="friendsListContainer">
+                        <ul>
+                            <li>
+                                <div class="friendsListItem">
+                                    <img src=#>
+                                    <span>Name: </span>
+                                </div>
+
+                            </li>
+                            <li>
+                                    <div class="friendsListItem">
+                                        <img src=#>
+                                        <span>Name: </span>
+                                    </div>
+    
+                                </li>
+                                <li>
+                                        <div class="friendsListItem">
+                                            <img src=# class="friendListImg">
+                                            <span class="friendsName">Name: </span>
+                                        </div>
+        
+                                    </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+        <!-- <img src="img/pulse.svg" class="logo"> -->
+
+
+
+        <!-- <div class="dropdown">
+            <button class="dropbtn"></button>
+            <img class="searchbtn" src="../img/search.png" width="10" height="10" />
+            <div class="dropdown-content">
+                <a href="#">Home</a>
+                <a href="#">My Settings</a>
+                <a href="#">Vybe Challenges</a>
+                <a href="#">Vybe Groups</a>
+                <a href="#">Log Out</a>
+            </div>
+        </div> -->
+
+        <!-- 
+        <div class="profileView">
+            <div class="profileBorder">
+                <div class="profileFeed">
+                    <div class="circularProfileImage">
+                        <img src="" alt="" id ="profilePhoto">
+                    </div>
+                </div>
+                <div class="firstName">
+                    <p>
+                        First Name
+                        <div class="lastName">
+                            Last Name
+                        </p>
+                    </div>
+                    <line />
+                    <div class="editProfile">
+                        <center>
+                            <a href="#"> Edit Profile</a>
+                        </center>
+                    </div>
+                    <line />
+
+
+                    <div class="viewProfile">
+                        <center>
+                            <a href="#"> View Profile</a>
+                        </center>
+                    </div>
+                </div>
+            </div> -->
+
+
+
+
+        <!-- ********** DIV ELEMENT TO POST CHALLENGE -->
+
+        <!-- <div class="vyberFeed">
+
+        <div class="createChallenge">
+
+        </div>
+      </div> -->
+    </div>
+
+    <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous">
+        </script>
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-functions.js"></script>
+    <!-- <script src="profile.js"></script> -->
+    <script>
+        // Initialize Firebase
+        // TODO: Replace with your project's customized code snippet
+        var config = {
+            apiKey: "AIzaSyAsZbv82yxR0vDFrCZnzXWA4sW65n1L4uM",
+            authDomain: "letsvybe-e4796.firebaseapp.com",
+            databaseURL: "https://letsvybe-e4796.firebaseio.com",
+            projectId: "letsvybe-e4796",
+            storageBucket: "letsvybe-e4796.appspot.com",
+            messagingSenderId: "527312988709"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+    <script src="scripts/profile.js"></script>
+</body>
+
+</html>
