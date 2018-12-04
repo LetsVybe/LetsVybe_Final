@@ -360,8 +360,42 @@ img {
   }
 
 
+  .nav-icons{
+    /* padding: 10px;
+    color: #fff; */
+  }
+
+  .fa-home:before {
+    content: "\f015";
+    color: #fff;
+    font-size: 3rem;
+}
+
+.fa-user:before {
+  content: "\f007";
+  color: #fff;
+    font-size: 3rem;
+}
+
+.fa-sign-out-alt:before {
+  color: red;
+    font-size: 3rem;
+}
+
+.mobileNav{
+  display: none;
+}
+
+.mobileNavSpan{
+  display:none;
+}
+.fa-bars:before {
+  content: "\f0c9";
+  color: #fff;
+  font-size: 3rem;
 
 
+}
 
   /* ================EVERYTHING ABOVE IS DESKTOP VIEW========== */
 
@@ -372,8 +406,47 @@ img {
     }
   }
 
+  @media screen and (max-width: 780px){
+    .mobileNavSpan{
+     display: inline;
+    }
+    .user-nav_profile-box{
+      display: none;
+    }
+
+    .mobileNav{
+      display: block;
+    margin: auto;
+    height: 2rem;
+ 
+
+    }
+
+
+  }
+
   /* 668px and under */
   @media screen and (max-width: 668px){
+
+    .user-nav_profile-box{
+      display: none;
+    }
+
+    .mobileNav{
+      display: block;
+    margin: auto;
+    height: 2rem;
+ 
+
+    }
+    /* menu for Mobile */
+    .fa-bars:before {
+      content: "\f0c9";
+      color: #fff;
+      font-size: 3rem;
+    
+    
+  }
 
     .post {
       width: 300px;

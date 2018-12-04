@@ -9,6 +9,9 @@
         <!--         Google Foonts Open Sans -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+                crossorigin="anonymous">
+                
         <link rel="stylesheet" href="styles/score.css">
         <link rel="stylesheet" href="styles/style.css">
 
@@ -27,6 +30,25 @@
 
                         </form>
 
+                        <div class="user-nav_profile-box">
+                                        <div class="user-nav__icon-box">
+                                              <span class="nav-icons"> <a href="home.html">  <i class="fa fa-home"></i> </a></span>
+                                        </div>
+                        </div>
+
+                        <div class="user-nav_profile-box">
+                                        <div class="user-nav__icon-box">
+                                              <span class="nav-icons"> <a href="profile.html"> <i class="fas fa-user"></i> </a></span>
+                                        </div>
+                        </div>
+
+                        <div class="user-nav_profile-box">
+                                        <div class="user-nav__icon-box">
+                                              <span class="nav-icons"> <a href="index.html">  <i class="fas fa-sign-out-alt"></i> </a></span>
+                                        </div>
+                        </div>
+
+
                         <nav class="user-nav">
                                 <!-- awaiting implementations of nav  -->
                                 <div class="user-nav_profile-box">
@@ -37,6 +59,11 @@
                                                 <span class="user-nav__user-name" id="nav-name"></span>
                                         </div>
                                 </div>
+
+                                <div class="mobileNav">
+                                        <span class="mobileNavSpan"> <i class="fas fa-bars"></i></span> 
+                                </div>
+
                         </nav>
                 </header>
 
@@ -185,14 +212,14 @@
 
                                         </div>
                                         <!-- area for the Friends Component   -->
-                                        <div class="friendsContainer">
-                                                <!-- container for name of the user and Friends count (Vybe) -->
+                                        <!-- <div class="friendsContainer">
+                                               
                                                 <div class="friendsContainer__header">
                                                         Jesus Ong
                                                 </div>
-                                                <!-- container for the flex grid  -->
+                                              
                                                 <div class="friendsContainer__gridContainer">
-                                                        <!-- each is a users Circle component ::: userName/UserImage -->
+                                               
                                                         <div class="item">1</div>
                                                         <div class="item">2</div>
                                                         <div class="item">3</div>
@@ -206,11 +233,11 @@
                                                         <div class="item">11</div>
                                                         <div class="item">12</div>
                                                 </div>
-                                                <!-- container for adding other users -->
+                                                
                                                 <div class="friendsContainer__actionBar">
                                                         <button>Add me Fam</button>
                                                 </div>
-                                        </div>
+                                        </div> -->
 
 
 
@@ -220,9 +247,9 @@
 
                                         <div class="feed">
                                                 <ul id="feed-list">
-                                                        <li>
+                                                        <!-- <li>
                                                                 <!-- for testing, code below this line to be deleted -->
-                                                                <div class="news">
+                                                        <!-- <div class="news">
                                                                         <div class="news__header">
                                                                                 <img src="#" class="user-nav__user-photo news__header--img">
                                                                                 <label class="name-title  news__header--title">First Last Name</label>
@@ -234,33 +261,27 @@
                                                                                         velit vel est quasi necessitatibus
                                                                                         obcaecati quo minima dolorem aperiam
                                                                                         nulla veritatis placeat.
-                                                                                </p>
-                                                                        </div>
+                                                                                 </p>
+                                                                        </div> -->
 
-                                                                        <div class="news__activity" id="nose">
-                                                                                <!-- Vybe-btn is similar to like-->
+                                                        <!-- <div class="news__activity" id="nose">
+                                                                              
                                                                                 <button class="news__activity__btn vybe-btn">
                                                                                         <span class="news__activity--icon">
-                                                                                                <!-- <svg class="user-nav__icon">
-                                                                                                        <use href="images/vybe.png"></use>
-                                                                                                </svg> -->
+                                                                                         
                                                                                                 <img class="user-nav__icon" src="images/vybe.png">
                                                                                         </span>
                                                                                 </button>
                                                                                 <button class="news__activity__btn play-btn">
                                                                                         <span class="news__activity--icon">
-                                                                                                <!-- <svg class="user-nav__icon">
-                                                                                                        <use href="images/play.png"></use>
-                                                                                                </svg> -->
+                                                                                             
                                                                                                 <img class="user-nav__icon" src="images/play.png">
                                                                                         </span>
                                                                                 </button>
-                                                                                <!-- Delete btn for Now, must create pop up with options by next week -->
+                                                                              
                                                                                 <button class="news__activity__btn" id="options-btn">
                                                                                         <span class="news__activity--icon">
-                                                                                                <!-- <svg class="user-nav__icon">
-                                                                                                        <use href="images/option.png"></use>
-                                                                                                </svg> -->
+                                                                                             
                                                                                                 <img class="user-nav__icon" src="images/option.png">
                                                                                         </span>
                                                                                 </button>
@@ -268,8 +289,8 @@
 
                                                                         </div>
                                                                 </div>
-                                                        </li>
-                                                        <!-- for testing, code above this line to be deleted -->
+                                                        </li> -->
+                                                        <!--  for testing, code above this line to be deleted -->
                                                         <li>
                                                                 <!-- <div class="news--opened">
                                                         <div class="news__header">
@@ -458,6 +479,17 @@
 
 
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
 </body>
 

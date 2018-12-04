@@ -118,7 +118,8 @@ height: 100vh;
 
 }
 
-#photoField{
+.photoField{
+    border-radius: 50%;
     margin-left: 2.5rem;
 }
     
@@ -148,6 +149,11 @@ height: 100vh;
 
 /* No greater than 764px */
 @media screen and (max-width: 764px){
+
+    /* When in small devices hide user Photo in the Nav */
+    .user-nav_profile-box{
+        display: none;
+    }
 
     .name{
         position: relative;
@@ -225,7 +231,7 @@ height: 100vh;
   #photoInput{
       margin: 0 auto;
   }
-  #photoField{  
+  .photoField{  
       border-radius: 50%;
       display: inline-block;
       text-align: center;
