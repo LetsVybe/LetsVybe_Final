@@ -137,7 +137,7 @@ function registerWithLetsVybe() {
     // start createwithemail            NEED TO SEE IF THIS LOGS A USER IN AS WELL
     firebase.auth().createUserWithEmailAndPassword(email, password)
 			.then(user => {
-				window.location.href = 'settings.html';
+				routeUser(user.user);
 			})
 			.catch(function(error) {
         // Handle Errors here.
@@ -253,22 +253,13 @@ function routeUser(user){
 			if (snapshot.exists && snapshot.data().profileComplete) {
 				window.location.href = 'home.html';
 			} else {
-                usersRef.doc(users.uid).set({profileComplete: false});
-				window.location.href = 'settings.html';
+                usersRef.doc(user.uid).set({profileComplete: false})
+                    .then(() => {
+                        window.location.href = 'settings.html';
+                    });
 			}
 		})
 		.catch(error => {
 			console.log(error.message);
 		});
-}
-
-function signOut(){
-    firebase.auth().signOut()
-        .then(() => {
-            console.log('Successfully logged out!');
-            window.location.href = 'index.html';
-        })
-        .catch(error => {
-            console.log(error.message);
-        });
 }
