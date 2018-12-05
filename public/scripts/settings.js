@@ -4,7 +4,7 @@ let domElements;
 let userRef;
 let storageRef;
 
-let debug = true;
+let debug = false;
 
 // When the window loads.
 window.onload = function () {
@@ -28,7 +28,6 @@ window.onload = function () {
 
             navName.innerHTML = user.displayName
             navName.setAttribute('style', 'color: #fff;')
-            console.log(navPhoto)
             if (debug) console.log('User: ', user);
 
             var profilePhoto = this.document.querySelectorAll('.photoField');
@@ -45,7 +44,7 @@ window.onload = function () {
             domElements.initialize(); // Sets all the id and connections.
 
             // Create a user prototype to store information locally and update it's field.
-            user = new userPrototype();
+            user = new userPrototype(domElements);
             user.retrieveUser(domElements, userRef);  // Also populates all the field in the document.
 
 

@@ -65,7 +65,6 @@ domElementsPrototype.prototype.initialize = function() {
     this.updatePhotoBtn = document.querySelector('#updatePhoto-btn');
     this.updateEmailBtn = document.querySelector('#updateEmail-btn');
     this.updatePhoneBtn = document.querySelector('#updatePhone-btn');
-    console.log(this.updatePhoneBtn);
     this.updateGenderBtn = document.querySelector('#updateGender-btn');
     this.updateCurrCityBtn = document.querySelector('#updateCurrCity-btn');
     this.updateZipCodeBtn = document.querySelector('#updateZipCode-btn');
@@ -76,13 +75,13 @@ domElementsPrototype.prototype.populateFields = function(user) {
     this.displayNameField.innerHTML = user.displayName;
     this.usernameField.innerHTML = user.username;
     this.ageField.innerHTML = user.age;
-    this.passwordField.innerHTML = '***********';
-    this.photoField.src = user.photoURL;
+    // this.passwordField.innerHTML = '***********';
+    // this.photoField.src = user.photoURL;
     this.emailField.innerHTML = user.email;
     this.phoneField.innerHTML = user.phoneNumber;
-    this.genderField.innerHTML = user.gender;
-    this.currCityField.innerHTML = user.currCity;
-    this.zipCodeField.innerHTML = user.zipCode;
+    // this.genderField.innerHTML = user.gender;
+    // this.currCityField.innerHTML = user.currCity;
+    // this.zipCodeField.innerHTML = user.zipCode;
 }
 
 // Add onClick action for all buttons
