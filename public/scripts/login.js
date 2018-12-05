@@ -20,8 +20,7 @@ function toggleLoginWithGoogle(){
         let provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider)
             .then(user => {
-							console.log(user);
-              	routeUser(user);
+              	routeUser(user.user);
             }).catch(error => {
             console.log(error);
         });
@@ -244,7 +243,8 @@ window.onload = function() {
 
 // Checks whether the user is logging in for the first time.
 function routeUser(user){
-	// Get the reference of the users object from the firestore.
+    // Get the reference of the users object from the firestore.
+    console.log('routing the user', user);
 	currUserRef = usersRef.doc(user.uid);
 
 	// Extract the reference from the database.
@@ -253,10 +253,22 @@ function routeUser(user){
 			if (snapshot.exists && snapshot.data().profileComplete) {
 				window.location.href = 'home.html';
 			} else {
+                usersRef.doc(users.uid).set({profileComplete: false});
 				window.location.href = 'settings.html';
 			}
 		})
 		.catch(error => {
 			console.log(error.message);
 		});
+}
+
+function signOut(){
+    firebase.auth().signOut()
+        .then(() => {
+            console.log('Successfully logged out!');
+            window.location.href = 'index.html';
+        })
+        .catch(error => {
+            console.log(error.message);
+        });
 }
