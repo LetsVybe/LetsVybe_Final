@@ -10,6 +10,7 @@ main {
 
 .container{
     padding: 5rem;
+   
     
 }
 
@@ -203,6 +204,7 @@ span{
         width: 100%;
         padding: 2rem;
         margin-left: 1rem;
+        font-size: 1.6rem;
     }
     
     .sideSettings{
@@ -252,6 +254,7 @@ span{
   }
   p{
       margin: 0;
+      
   }
 
   /* .box{

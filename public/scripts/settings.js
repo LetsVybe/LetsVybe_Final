@@ -27,6 +27,7 @@ window.onload = function () {
             navPhoto.setAttribute('src', user.photoURL);
 
             navName.innerHTML = user.displayName
+            console.log(user)
             navName.setAttribute('style', 'color: #fff;')
             if (debug) console.log('User: ', user);
 
@@ -35,13 +36,13 @@ window.onload = function () {
                 photo.setAttribute('src',user.photoURL);
             }) ;
 
-            const userName = document.getElementById('name');
-            const userGender = document.getElementById('gender');
-            const userlocation = document.getElementById('location');
-            const userEmail = document.getElementById('email');
+            // const userName = document.getElementById('name');
+            // const userGender = document.getElementById('gender');
+            // const userlocation = document.getElementById('location');
+            // const userEmail = document.getElementById('email');
             
-            userName.innerHTML = user.displayName;
-            console.log(user)
+            // userName.innerHTML = user.
+            // userName.setAttribute('style','color:#000;');
             // userGender.innerHTML = user.
 
 

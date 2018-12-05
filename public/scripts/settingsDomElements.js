@@ -11,6 +11,7 @@ let domElementsPrototype = function() {
     this.currCityField = null;
     this.zipCodeField = null;
 
+
     // Buttons elements
     this.updateDisplayNameBtn = null;
     this.updateUsernameBtn = null;
@@ -46,6 +47,9 @@ domElementsPrototype.prototype.initialize = function() {
     this.genderField = document.querySelector('#genderField');
     this.currCityField = document.querySelector('#currCityField');
     this.zipCodeField = document.querySelector('#zipCodeField');
+
+    //mobile
+   
     // For Inputs
     this.photoInput = document.querySelector('#photoInput');
     this.displayNameInput = document.querySelector('#displayNameInput');
