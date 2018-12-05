@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
                 crossorigin="anonymous">
-                
+
         <link rel="stylesheet" href="styles/score.css">
         <link rel="stylesheet" href="styles/style.css">
 
@@ -31,21 +31,33 @@
                         </form>
 
                         <div class="user-nav_profile-box">
-                                        <div class="user-nav__icon-box">
-                                              <span class="nav-icons"> <a href="home.html">  <i class="fa fa-home"></i> </a></span>
-                                        </div>
+                                <div class="user-nav__icon-box">
+                                        <span class="nav-icons">
+                                                <a href="home.html">
+                                                        <i class="fa fa-home"></i>
+                                                </a>
+                                        </span>
+                                </div>
                         </div>
 
                         <div class="user-nav_profile-box">
-                                        <div class="user-nav__icon-box">
-                                              <span class="nav-icons"> <a href="profile.html"> <i class="fas fa-user"></i> </a></span>
-                                        </div>
+                                <div class="user-nav__icon-box">
+                                        <span class="nav-icons">
+                                                <a href="profile.html">
+                                                        <i class="fas fa-user"></i>
+                                                </a>
+                                        </span>
+                                </div>
                         </div>
 
                         <div class="user-nav_profile-box">
-                                        <div class="user-nav__icon-box">
-                                              <span class="nav-icons"> <a href="index.html">  <i class="fas fa-sign-out-alt"></i> </a></span>
-                                        </div>
+                                <div class="user-nav__icon-box">
+                                        <span class="nav-icons">
+                                                <a href="index.html">
+                                                        <i class="fas fa-sign-out-alt"></i>
+                                                </a>
+                                        </span>
+                                </div>
                         </div>
 
 
@@ -61,14 +73,16 @@
                                 </div>
 
                                 <div class="mobileNav">
-                                        <span class="mobileNavSpan"> <i class="fas fa-bars"></i></span> 
+                                        <span class="mobileNavSpan">
+                                                <i class="fas fa-bars"></i>
+                                        </span>
                                 </div>
 
                         </nav>
                 </header>
 
                 <div class="container">
-                        <!-- Meat and bones of the Home Page that is held together responsively by Bootstrap: Streaks, VybeView -->
+                        <!-- Meat an bones of the Home Page that is held together responsively by Bootstrap: Streaks, VybeView -->
                         <div class="content">
                                 <!-- awaiting on implementations
                                 will be populated onces user has friends
@@ -454,7 +468,13 @@
                         </div>
 
                 </div>
+                
         </div>
+        <!-- <div id="google_translate_element"></div> -->
+                <!-- <div id="like_button_container"></div> -->
+        <!-- end of container -->
+
+
         <!-- Firebase scripts needed to run api calls-->
         <script defer src="/__/firebase/5.5.8/firebase-app.js"></script>
         <!-- include only the Firebase features as you need -->
@@ -472,6 +492,16 @@
         <script src="scripts/home.js"></script>
         <script src="scripts/postCard.js"></script>
 
+        <!-- Load React. -->
+        <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+        <!-- Load our React component. -->
+        <script src="like_button.js"></script>
+
+
+
 
         <!-- <script src="home-front.js" type="module "></script> -->
         <!-- <script src="dummy.js" type="module"></script> -->
@@ -479,16 +509,13 @@
 
 
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+                function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                }
+        </script>
 
-        <div id="google_translate_element"></div>
-
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-}
-</script>
-
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
 </body>
