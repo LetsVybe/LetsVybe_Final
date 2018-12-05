@@ -67,20 +67,17 @@ $(".userName").click(function () {
         });
 }
 
-
 function updateDisplayName(){
 $(".displayName").click(function () {
         $(".updateDisplayName").toggle()
         });
 }
 
-
 function updatePassword(){
 $(".password").click(function () {
         $(".updatePassword").toggle()
         });
 }
-
 
 function updateAge(){
     $(".age").click(function () {
@@ -110,5 +107,16 @@ function updateGender(){
 function updateAreaCode(){
     $(".areaCode").click(function () {
         $(".updateAreaCode").toggle()
+        });
+}
+
+function signOut(){
+    firebase.auth().signOut()
+        .then(() => {
+            console.log('Successfully logged out!');
+            window.location.href = 'index.html';
+        })
+        .catch(error => {
+            console.log(error.message);
         });
 }

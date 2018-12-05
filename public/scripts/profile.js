@@ -304,7 +304,16 @@ function renderFriend(user){
     // Get the reference the the list and append.
     let ul = document.querySelector('#friends-list');
     ul.appendChild(li);
+}
 
-    
+function signOut(){
+    firebase.auth().signOut()
+        .then(() => {
+            console.log('Successfully logged out!');
+            window.location.href = 'index.html';
+        })
+        .catch(error => {
+            console.log(error.message);
+        });
 }
 

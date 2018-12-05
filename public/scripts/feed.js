@@ -607,3 +607,14 @@ function renderWeatherElement(){
 
 
 }
+
+function signOut(){
+    firebase.auth().signOut()
+        .then(() => {
+            console.log('Successfully logged out!');
+            window.location.href = 'index.html';
+        })
+        .catch(error => {
+            console.log(error.message);
+        });
+}
