@@ -101,7 +101,7 @@ userPrototype.prototype.updateDisplayName = function (newDisplayName) {
     firebase.auth().currentUser.updateProfile({displayName: newDisplayName})
         .then(() => {
             if (debug) console.log('Successfully updated displayName');
-            this.domElements.phoneField.innerText = newDisplayName;
+            this.domElements.displayNameField.innerText = newDisplayName;
             window.location.reload();
         })
         .catch(error => {

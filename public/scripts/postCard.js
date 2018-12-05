@@ -156,7 +156,7 @@ QuestionsContainer.prototype.initializeElement = function () {
         questionID = challengeID + index;
         if (this.answers !== null) {
             answer = this.answers[index];
-            this.score = (answer == question.correctAnswer ? this.score + 1 : this.score);
+            this.score = (answer == question.correctAnswer ? this.score + 100 : this.score);
         }
         let questionDiv = new QuestionContainer(question, questionID, answer);
         this.childQuestionsContainer.push(questionDiv);
@@ -287,7 +287,11 @@ QuestionContainer.prototype.renderUnattemptedAnswers = function (possibleAnswer,
     radioDivContainer.appendChild(questionLabel)
 
     // Append the rendered answer to the form
-    this.form.appendChild(radioDivContainer)
+    if (parseInt(Math.random() * 10) % 2 == 0){
+        this.form.prepend(radioDivContainer)
+    } else {
+        this.form.appendChild(radioDivContainer)
+    }
 
 }
 

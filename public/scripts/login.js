@@ -250,7 +250,7 @@ function routeUser(user){
 	// Extract the reference from the database.
 	currUserRef.get()
 		.then(snapshot => {
-			if (snapshot.exists && snapshot.data().profileComplete) {
+			if (snapshot.exists) {
 				window.location.href = 'home.html';
 			} else {
                 usersRef.doc(user.uid).set({profileComplete: false})

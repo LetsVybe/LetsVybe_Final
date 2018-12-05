@@ -35,7 +35,6 @@ window.onload = function () {
                 photo.setAttribute('src',user.photoURL);
             }) ;
 
-
             // Get the user from the database.
             let uid = firebase.auth().currentUser.uid;
             userRef = databaseRef.collection('users').doc(uid);
