@@ -31,10 +31,21 @@ window.onload = function () {
             console.log(navPhoto)
             if (debug) console.log('User: ', user);
 
-            var profilePhoto = this.document.querySelectorAll('.photoField');
+            const profilePhoto = this.document.querySelectorAll('.photoField');
             profilePhoto.forEach(photo => {
                 photo.setAttribute('src',user.photoURL);
             }) ;
+
+            const userName = document.getElementById('name');
+            const userGender = document.getElementById('gender');
+            const userlocation = document.getElementById('location');
+            const userEmail = document.getElementById('email');
+            
+            userName.innerHTML = user.displayName;
+            console.log(user)
+            // userGender.innerHTML = user.
+
+
 
 
             // Get the user from the database.
