@@ -172,7 +172,8 @@ window.onload = function () {
             var profilePhoto = this.document.getElementById('profilePhoto');
             profilePhoto.setAttribute('src',user.photoURL);
             navPhoto.setAttribute('src', user.photoURL);
-            postAreaPhoto.setAttribute('src', user.photoURL)
+            postAreaPhoto.setAttribute('src', user.photoURL);
+            document.querySelector('#userName').innerHTML = user.displayName;
             
             navName.innerHTML = user.displayName
             navName.setAttribute('style', 'color: #fff;')

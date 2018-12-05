@@ -111,8 +111,10 @@ img {
     height: 100%;
     display: flex;
     align-items: center; }
-  .user-nav > *:hover {
-    background: var(--color-primary-light); }
+  .user-nav > span:hover {
+    }
+    .user-nav > a:hover {
+    }
   .user-nav__icon-box {
     position: relative; }
   .user-nav__icon {
