@@ -15,12 +15,12 @@ window.onload = function () {
     storageRef = firebase.storage().ref();
 
     // Firebase recommended settings for the firestore.
-    databaseRef.settings({timestampsInSnapshots: true});
+    databaseRef.settings({ timestampsInSnapshots: true });
 
     // Listen for the initialization of the currentUser in firebase.
     firebase.auth().onAuthStateChanged(user => {
         // If user exists continue with the rest of the retrieval.
-        if (user){
+        if (user) {
 
             var navPhoto = document.getElementById("navPhoto")
             var navName = document.getElementById("nav-name")
@@ -30,6 +30,11 @@ window.onload = function () {
             navName.setAttribute('style', 'color: #fff;')
             console.log(navPhoto)
             if (debug) console.log('User: ', user);
+
+            var profilePhoto = this.document.querySelectorAll('.photoField');
+            profilePhoto.forEach(photo => {
+                photo.setAttribute('src',user.photoURL);
+            }) ;
 
 
             // Get the user from the database.
@@ -47,70 +52,107 @@ window.onload = function () {
             domElements.setUpOnClickActions(user);
 
 
-            
+
             uid = user.uid;  // This is taking up unnecessary space.  We always have user and can always reference user.uid in constant time (k).
 
 
-        } 
+        }
         // Otherwise redirect to the login page.
         else {
             // TODO: Find how to redirect the page. 
         }
     });
 
-    
+
 }
 
-function updateUser(){
-$(".userName").click(function () {
-        $(".updateUserName").toggle()
-        });
+function updateDisplayPhoto(){
+    $(".displayPhoto").click(function () {
+        $(".updateDisplayPhoto").toggle();
+    });
+    $('#editPhoto').click(function () {
+        $(".updateDisplayPhoto").toggle();
+    })
+} 
+
+function updateUserName() {
+    $(".userName").click(function () {
+        $(".updateUserName").toggle();
+    });
+    $('#editName').click(function () {
+        $(".updateUserName").toggle();
+    })
+
 }
 
-function updateDisplayName(){
-$(".displayName").click(function () {
-        $(".updateDisplayName").toggle()
-        });
+function updateDisplayName() {
+    $(".displayName").click(function () {
+        $(".updateDisplayName").toggle();
+    });
+    $('#editDisplayName').click(function () {
+        $(".updateDisplayName").toggle();
+    });
+
+    ;
 }
 
-function updatePassword(){
-$(".password").click(function () {
+function updatePassword() {
+    $(".password").click(function () {
         $(".updatePassword").toggle()
-        });
+    });
+    $('.edit').click(function () {
+        $(".updatePassword").toggle();
+    });
 }
 
-function updateAge(){
+function updateAge() {
     $(".age").click(function () {
         $(".updateAge").toggle()
-        });
+    });
+    $('#editAge').click(function () {
+        $(".updateAge").toggle();
+    });
 }
 
-function updatePhoneNumber(){
+function updatePhoneNumber() {
     $(".phoneNumber").click(function () {
         $(".updatePhoneNumber").toggle()
-        });
+    });
+    $('#editPhone').click(function () {
+        $(".updatePhoneNumber").toggle();
+    });
 
 }
 
 function updateEmail() {
     $(".email").click(function () {
         $(".updateEmail").toggle()
-        });
+    });
+    $('#editEmail').click(function () {
+        $(".updateEmail").toggle();
+    });
 }
 
-function updateGender(){
+function updateGender() {
     $(".gender").click(function () {
         $(".updateGender").toggle()
-        });
+    });
+    $('.edit').click(function () {
+        $(".updateGender").toggle();
+    });
 }
 
-function updateAreaCode(){
+function updateAreaCode() {
     $(".areaCode").click(function () {
         $(".updateAreaCode").toggle()
-        });
+    });
+    $('.edit').click(function () {
+        $(".updateAreaCode").toggle();
+    });
+
 }
 
-function signOut(){
+function signOut() {
     firebase.auth().signOut()
         .then(() => {
             console.log('Successfully logged out!');

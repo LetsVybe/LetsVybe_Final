@@ -65,6 +65,7 @@ domElementsPrototype.prototype.initialize = function() {
     this.updatePhotoBtn = document.querySelector('#updatePhoto-btn');
     this.updateEmailBtn = document.querySelector('#updateEmail-btn');
     this.updatePhoneBtn = document.querySelector('#updatePhone-btn');
+    console.log(this.updatePhoneBtn);
     this.updateGenderBtn = document.querySelector('#updateGender-btn');
     this.updateCurrCityBtn = document.querySelector('#updateCurrCity-btn');
     this.updateZipCodeBtn = document.querySelector('#updateZipCode-btn');
@@ -97,10 +98,11 @@ domElementsPrototype.prototype.setUpOnClickActions = function(user) {
     this.updateAgeBtn.onclick = function() {
         user.updateAge(domElement.ageInput.value);
     }
-    this.updatePasswordBtn.onclick = function() {
-        user.updatePassword(domElement.passwordInput.value);
-    }
+    // this.updatePasswordBtn.onclick = function() {
+    //     user.updatePassword(domElement.passwordInput.value);
+    // }
     this.updatePhotoBtn.onclick = function() {
+        console.log('onClick');
         user.parsePhotoFileAndUpdateURL(domElement.photoInput.files[0]);
     }
     this.updateEmailBtn.onclick = function() {
@@ -109,15 +111,15 @@ domElementsPrototype.prototype.setUpOnClickActions = function(user) {
     this.updatePhoneBtn.onclick = function() {
         user.updatePhone(domElement.phoneInput.value);
     }
-    this.updateGenderBtn.onclick = function() {
-        user.updateGender(domElement.genderInput.value);
-    }
-    this.updateCurrCityBtn.onclick = function() {
-        user.updateCurrCity(domElement.currCityInput.value);
-    }
-    this.updateZipCodeBtn.onclick = function() {
-        user.updateZipCode(domElement.zipCodeInput.value);
-    }
+    // this.updateGenderBtn.onclick = function() {
+    //     user.updateGender(domElement.genderInput.value);
+    // }
+    // this.updateCurrCityBtn.onclick = function() {
+    //     user.updateCurrCity(domElement.currCityInput.value);
+    // }
+    // this.updateZipCodeBtn.onclick = function() {
+    //     user.updateZipCode(domElement.zipCodeInput.value);
+    // }
 }
 
 

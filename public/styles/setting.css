@@ -21,7 +21,7 @@ h3{
 
 .btn {
     margin: 2rem auto;
-    width: 126px;
+    width: 176px;
     height: 36px;
     border-radius: 8px;
     background-color: #4a148c;
@@ -123,9 +123,18 @@ height: 100vh;
     margin-left: 2.5rem;
 }
     
+p{
+    font-weight: 900;
+}
+
+span{
+    font-weight: 900;
+}
 .option{
     padding: 0.5rem;
     margin-left: 2.5rem;
+    font-size: 1.8rem;
+
     
 }
 
