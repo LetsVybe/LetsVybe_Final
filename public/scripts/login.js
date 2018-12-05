@@ -253,7 +253,8 @@ function routeUser(user){
 			if (snapshot.exists) {
 				window.location.href = 'home.html';
 			} else {
-                usersRef.doc(user.uid).set({profileComplete: false})
+                firebase.auth().currentUser.updateProfile({photoURL: 'https://semantic-ui.com/images/avatar2/large/elyse.png'});
+                usersRef.doc(user.uid).set({photoURL: 'https://semantic-ui.com/images/avatar2/large/elyse.png'})
                     .then(() => {
                         window.location.href = 'settings.html';
                     });
